@@ -1,4 +1,7 @@
-fastapi==0.70.1
+fastapi==0.65.1
+fastapi-plugins==0.8.1
+fastapi-utils==0.2.1
 uvicorn==0.16.0
 pytest==6.2.5
 httpx==0.21.1
+python-dotenv==0.19.2
