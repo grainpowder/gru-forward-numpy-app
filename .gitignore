@@ -1,5 +1,11 @@
-.DS_Store
+# Python
 venv/
-.idea
 __pycache__
+
+# Project
 .env
+model/
+
+# Manual
+.DS_Store
+.idea

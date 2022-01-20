@@ -1,13 +1,15 @@
 import uvicorn
 from fastapi import FastAPI
+from npgru.router.config import app_router
 
-from npgru.configs import app_config, router_config
+app = FastAPI(
+    title="gru-forward-numpy-app",
+    description="App to compare inference speed of ideated model and original Tensorflow model",
+    version="0.1.1"
+)
 
-config = app_config.get_config()
+app.include_router(app_router)
 
-app = FastAPI(title=config.APP_NAME, version=config.APP_VERSION)
-
-app.include_router(router_config.router)
 
 if __name__ == "__main__":
     uvicorn.run(
