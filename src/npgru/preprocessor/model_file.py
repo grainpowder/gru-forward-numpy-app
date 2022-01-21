@@ -32,6 +32,11 @@ class ModelFilePreparer:
         self._model_dir = get_model_dir()
         self._compressed_file_names = COMPRESSED_FILE_NAMES
 
+    @classmethod
+    def execute(cls):
+        preparer = cls()
+        preparer.prepare()
+
     def prepare(self):
         """
         Prepare compressed model files in model_dir
@@ -64,6 +69,11 @@ class ModelFileDecompressor:
         self._model_dir = get_model_dir()
         self._compressed_file_names = COMPRESSED_FILE_NAMES
         self._decompressed_file_names = [name.strip(".gz").strip(".zip") for name in self._compressed_file_names]
+
+    @classmethod
+    def execute(cls):
+        decompressor = cls()
+        decompressor.decompress()
 
     def decompress(self) -> None:
         """
